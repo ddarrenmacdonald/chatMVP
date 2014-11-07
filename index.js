@@ -1,4 +1,5 @@
 //Declared Variables
+var express = require('express');
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -7,6 +8,9 @@ var io = require('socket.io')(http);
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
+
+/* looks for the style sheet */
+app.use("/style.css", express.static(__dirname + '/style.css'));
 
 //Added in Socket.io
 io.on('connection', function(socket){
