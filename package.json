@@ -1,0 +1,9 @@
+{
+  "name": "Ds-Chat-MVP",
+  "version": "0.0.1",
+  "description": "The final project for the Chat App",
+  "dependencies": {
+    "express": "^4.10.1",
+    "socket.io": "^1.2.0"
+  }
+}
