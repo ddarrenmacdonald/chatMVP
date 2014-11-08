@@ -22,7 +22,7 @@ body { font: 13px Helvetica, Arial; }
 	padding: 5px 10px; }
 
 #messages li:nth-child(odd) { 
-	background: #eee; }
+	background: #fff; }
 
 #users {
 	background-color: #8DC74E;
