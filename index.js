@@ -12,6 +12,9 @@ app.get('/', function(req, res){
 /* looks for the style sheet */
 app.use("/style.css", express.static(__dirname + '/style.css'));
 
+/* looks for the Assets */
+app.use("/assets", express.static(__dirname + '/assets'));
+
 //Added in Socket.io
 io.on('connection', function(socket){
   console.log('a user connected');

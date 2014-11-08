@@ -2,7 +2,7 @@
 node_modules/
 dump.rdb
 redis-2.8.17/
-
+assets/
 
 # Compiled source #
 ###################
