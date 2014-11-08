@@ -5,6 +5,14 @@
       
 body { font: 13px Helvetica, Arial; }
 
+#header {
+	background: #000;  
+	position: fixed; 
+	height: 60px;
+	top: 0; 
+	width: 100%; }
+}
+
 #messages { 
 	list-style-type: none; 
 	margin: 0; 
@@ -20,6 +28,8 @@ body { font: 13px Helvetica, Arial; }
 	background-color: pink;
 	width: 20%;
 	height: 600px;
+	padding-top: 70px;
+	padding-left: 10px;
 	float: left;
 }
      
