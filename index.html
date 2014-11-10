@@ -1,39 +1,39 @@
 <!doctype html>
 <html>
-  <head>
-    <title>ChatCon App</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+<head>
+  <title>ChatCon App</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
     
-  </head>
+</head>
   <!-- Main Content Area -->
-  <body>
-  <div id="container">
+<body>
+<div id="container">
   <!-- Header Section, for ChatCon logo and rooms -->
-  <section id="header">
+  <div id="header">
     <div id="logo">
       <img src="./assets/ChatCon.png" alt="logo">
     </div>
     <div id="rooms">
     </div>
+  </div>
   <!-- This is the left sidebar for users -->
-  </section>
-  <section id="users">
-    <h3>Current Users</h3>
-  </section>
+  <div id="users">
+    <p>Current Users</p>
+    <ul id="user"></ul>
+  </div>
 
   <!-- Primary message area for the chat -->  
-  <section id="messageArea">
+  <div id="messageArea">
     <ul id="messages"></ul>
-  </section>
+  </div>
 
   <!--Bottom form entry box -->
-  <section id="formEntry">
+  <div id="formEntry">
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
-  </section>
- 
   </div>
+</div>
 
 
  <!-- Insert Scripts below here -->   
@@ -41,6 +41,19 @@
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
   var socket = io();
+  //Get the username upon connect and emits name
+  var name = "";
+  socket.on('connect', function(){
+    name = prompt('What is your name?');
+    socket.emit('join', name); 
+  });
+  socket.on('username', function(username){
+    $('#user').html(" "); //this clears the html in the user element and reloads :)
+    for(i = username.length; i > -1; i--) {
+      $('#user').append($('<div>').text(username[i]));
+      //socket.emit('username', username[i]);
+    };
+  });
   $('form').submit(function(){
     socket.emit('chat message', $('#m').val());
     $('#m').val('');

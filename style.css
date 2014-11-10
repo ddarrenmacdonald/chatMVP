@@ -32,9 +32,15 @@ body { font: 13px Helvetica, Arial; }
 	padding-left: 10px;
 	float: left;
 }
+
+#user {
+	padding-top: 10px;
+	font-color: #fff;
+}
      
 #messageArea {
 	background-color: #4CADC1;
+	padding-top: 90px;
 	width: 80%;
 	height: 600px;
 	float:right; 
